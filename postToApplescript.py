@@ -15,7 +15,7 @@ def newPost(blogid, username, password, struct, publish):
 	# Bounce the title, link, and content to the Applescript.  Return value will be the string used to identify
 	# the post in the future.
 	desc = struct['description']
-	link = struct['link']
+	link = struct.has_key('link') and struct['link'] or ''
 	title = struct['title']
 	# A pattern that will be repeated often, simply bounce the information to Applescript by using Applescript's
 	# ability to call into other scripts.
@@ -38,7 +38,7 @@ def getPost(postid, username, password):
 
 def editPost (postid, username, password, struct, publish):
 	content = struct['description']
-	link = struct['link']
+	link = struct.has_key('link') and struct['link'] or ''
 	title = struct['title']
 	tmp = popen("""osascript <<-END
 	set x to load script "%s"

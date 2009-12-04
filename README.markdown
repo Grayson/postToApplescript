@@ -29,6 +29,10 @@ example.scpt is about as basic as it can get.  It implements all of the necessar
 
 My Applescript version of the MetaWeblog API is highly simplified.  It doesn't support many of the features of the full API but it has enough to do basic blog publishing.  Basically, I tossed out everything that I didn't care about.  I don't need to worry about whether or not something will be published or categories or file support or anything like that.  I don't care about users and passwords since this was designed to be a single-user on my own machine.  If you want this stuff, fork the project and add it.  I'll probably work to find some way to allow for multiple blogs to use different scripts but I don't have any plans to support more of the API.
 
+## Additional scripts
+
+* **soup.io.scpt** - This is a small script designed to allow posting to Soup.io.  Basically, it shoots emails to Soup.io's special email address that it provides for posting to your site.  If you need to change this email address, simply delete the file at `~/Library/Preferences/postToApplescript.soup.io.plist`.  The next time you try to post, MarsEdit will prompt you for your email address.  This script also attempts to convert your posts using Markdown/SmartyPants if possible.  To use this, open the script and change the path to these files (and make sure that they're executable by the shell).
+
 ## Contact information
 
 Grayson Hansard  
